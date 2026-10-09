@@ -232,11 +232,11 @@ export const roleFilters = [
 
 export const sponsors = {
   top: [
-    { name: 'Studio Dentistico Zornetta', tagline: 'Via Padova, 13 – 30035 Mirano (VE)', logo: "/images/sponsor/zornetta.png"},
-    { name: 'R.E.L.IN. Impianti Industriali', tagline: 'Mira', logo: "/images/sponsor/belafonte.png"},
+    { name: 'Studio Dentistico Zornetta', tagline: 'Via Padova, 13 – 30035 Mirano (VE)', logo: "/images/sponsor/zorne.png"},
+    { name: 'R.E.L.IN. Impianti Industriali', tagline: 'Mira', logo: "/images/sponsor/relin.png"},
     { name: 'Birreria Paninoteca Belafonte', tagline: 'Via Argine Destro Canale Taglio, 17 – Mira (VE)', logo: "/images/sponsor/belafonte.png"},
-    { name: 'Bar caffetteria Ca.&Fe. ', tagline: 'Via Rialto, 64 – 30034 Oriago (VE)', logo: "/images/sponsor/belafonte.png"},
-    { name: 'Venezia Cinearte Academy', tagline: 'Piazza XXVII Ottobre, 54 – 30173 Venezia Mestre (VE)', logo: "/images/sponsor/belafonte.png"},
+    { name: 'Bar caffetteria Ca.&Fe. ', tagline: 'Via Rialto, 64 – 30034 Oriago (VE)', logo: "/images/sponsor/cafe.png"},
+    { name: 'Venezia Cinearte Academy', tagline: 'Piazza XXVII Ottobre, 54 – 30173 Venezia Mestre (VE)', logo: "/images/sponsor/cinearte.png"},
   ],
 
 }

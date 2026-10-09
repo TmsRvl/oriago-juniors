@@ -29,7 +29,8 @@ export function Squad() {
           eyebrow="Rosa Giocatori"
           title={
             <>
-              La Nostra <span className="text-primary">Squadra</span>
+            Le Nostre <span className="text-primary">Tigri</span>
+              {/* La Nostra <span className="text-primary">Squadra</span> */}
             </>
           }
           description="I ragazzi che hanno scelto di scrivere la prima pagina della storia degli Oriago Juniors."
