@@ -1,12 +1,15 @@
 export default function customImageLoader({ src }) {
-  // Se è già un URL assoluto esterno (http/https), non toccarlo
   if (src.startsWith('http://') || src.startsWith('https://')) {
     return src;
   }
-
-  const basePath = process.env.NODE_ENV === 'production' ? '/oriago-juniors' : '';
   
-  // Rimuove eventuali slash duplicati e attacca il basePath
+  const basePath = '/oriago-juniors';
+
+  // Evita di duplicare il basePath se per caso è già presente
+  if (src.startsWith(basePath)) {
+    return src;
+  }
+
   const cleanSrc = src.startsWith('/') ? src : `/${src}`;
   return `${basePath}${cleanSrc}`;
 }
