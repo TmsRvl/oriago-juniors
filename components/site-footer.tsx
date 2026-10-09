@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { contacts, navLinks } from '@/lib/club-data'
+import { prefixPath } from '@/lib/utils-path'
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -31,7 +32,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 md:grid-cols-2 md:px-6 lg:grid-cols-[1.3fr_1fr_1fr_0.8fr]">
         <div>
           <div className="flex items-center gap-3">
-            <Image src="/images/logo-oriago.png" alt="" width={48} height={58} className="h-14 w-auto mix-blend-screen" />
+            <Image src={prefixPath("/images/logo-oriago.png")} alt="" width={48} height={58} className="h-14 w-auto mix-blend-screen" />
             <p className="font-display text-2xl font-bold uppercase leading-none">
               Oriago <span className="text-primary">Juniors</span>
             </p>

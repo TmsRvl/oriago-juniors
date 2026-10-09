@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ArrowRight, CalendarDays, Sparkles } from 'lucide-react'
 import {roster} from '@/lib/club-data'
+import { prefixPath } from '@/lib/utils-path'
 
 const totalPlayers = Object.values(roster).reduce(
   (total, players) => total + players.length, 
@@ -17,7 +18,7 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden">
       <Image
-        src="/images/maglie2.png"
+        src={prefixPath("/images/maglie2.png")}
         alt=""
         fill
         priority

@@ -113,6 +113,7 @@ import { games } from '@/lib/club-data'
 import { Countdown } from '@/components/countdown'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
+import { prefixPath } from '@/lib/utils-path'
 
 export function NextMatch() {
   const todayStart = new Date()
@@ -166,7 +167,7 @@ export function NextMatch() {
             {/* Blocco Oriago Juniors: se isHome è true va a destra (order-3), altrimenti sta a sinistra (order-1) */}
             <div className={cn("flex flex-col items-center text-center", isHome ? "order-1" : "order-3")}>
               <div className="flex size-24 items-center justify-center rounded-2xl border border-primary/30 bg-black md:size-36">
-                <Image src="/images/logo-oriago.png" alt="Stemma Oriago Juniors" width={120} height={146} className="h-20 w-auto md:h-32" />
+                <Image src={prefixPath("/images/logo-oriago.png")} alt="Stemma Oriago Juniors" width={120} height={146} className="h-20 w-auto md:h-32" />
               </div>
               <h3 className="mt-4 font-display text-lg font-bold uppercase leading-tight md:text-3xl">Oriago Juniors</h3>
               <span className="mt-1 text-xs font-semibold uppercase tracking-wider text-primary">{isHome ? 'Casa' : 'Trasferta'}</span>

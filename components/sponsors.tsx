@@ -2,6 +2,7 @@ import { ArrowUpRight, Crown, Plus, Star } from 'lucide-react'
 import { contacts, sponsors } from '@/lib/club-data'
 import { SectionHeading } from '@/components/section-heading'
 import Image from 'next/image'
+import { prefixPath } from '@/lib/utils-path'
 
 // function SponsorMark({ name, large }: { name: string; large?: boolean }) {
 //   const initials = name
@@ -41,7 +42,7 @@ function SponsorMark({ name, logo, large }: { name: string; logo?: string; large
       >
         {logo ? (
           <Image
-            src={logo}
+            src={prefixPath(logo)}
             alt={`Logo ${name}`}
             fill
             className="object-contain"

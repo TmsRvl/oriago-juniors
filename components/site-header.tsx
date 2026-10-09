@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { navLinks } from '@/lib/club-data'
+import { prefixPath } from '@/lib/utils-path'
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
@@ -12,7 +13,7 @@ export function SiteHeader() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-4 px-4 md:h-24 md:px-6">
         <a href="#home" className="flex items-center gap-3" aria-label="Oriago Juniors – torna all'inizio">
           <img
-            src="/images/logo-oriago.png"
+            src={prefixPath("/images/logo-oriago.png")}
             alt="Oriago Juniors Crest"
             width={80}
             height={80}
