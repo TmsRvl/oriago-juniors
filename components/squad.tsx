@@ -54,26 +54,32 @@ export function Squad() {
 
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {visible.map((player) => (
-            <li key={player.name}>
-              <article className="glass-card group relative overflow-hidden rounded-2xl transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
-                <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-white/[0.06] to-black">
-                  <span
-                    className="absolute left-3 top-2 font-display text-6xl font-bold leading-none text-gradient-orange opacity-90 md:text-7xl"
-                    aria-hidden="true"
-                  >
-                    {roleShort[player.role]}
-                  </span>
-                  <div className="absolute inset-x-0 bottom-0 flex justify-center" aria-hidden="true">
-                    <User className="size-40 translate-y-6 text-white/25 transition-colors group-hover:text-primary/50 md:size-48" strokeWidth={1} />
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black via-black/60 to-transparent" aria-hidden="true" />
+            <li key={player.name} className="flex">
+              <article className="glass-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-b from-white/[0.06] to-black transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
+                
+                {/* SFONDO E GRAFICA (Occupa tutto lo spazio interno senza alterare le proporzioni) */}
+                <span
+                  className="absolute left-3 top-2 font-display text-5xl font-bold leading-none text-gradient-orange opacity-90 sm:text-6xl md:text-7xl"
+                  aria-hidden="true"
+                >
+                  {roleShort[player.role]}
+                </span>
+
+                <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
+                  <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
                 </div>
-                <div className="relative -mt-16 px-4 pb-5">
-                  <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">{player.role}</p>
-                  <h3 className="mt-1 font-display text-lg font-semibold uppercase leading-tight md:text-xl">
+
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" aria-hidden="true" />
+
+                <div className="relative mt-auto w-full p-3 md:p-4">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary md:text-[11px]">
+                    {player.role}
+                  </p>
+                  <h3 className="mt-0.5 font-display text-xs font-semibold uppercase leading-tight sm:text-sm md:text-lg">
                     {player.name}
                   </h3>
                 </div>
+
               </article>
             </li>
           ))}
@@ -85,24 +91,28 @@ export function Squad() {
           </h3>
           <ul className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {coaches.map((coach) => (
-              <li key={coach}>
-                <article className="glass-card group relative overflow-hidden rounded-2xl border-primary/40 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
-                  <div className="relative aspect-[4/5] overflow-hidden bg-gradient-to-b from-primary/15 to-black">
-                    <span
-                      className="absolute left-3 top-2 font-display text-5xl font-bold leading-none text-gradient-orange opacity-90 md:text-6xl"
-                      aria-hidden="true"
-                    >
-                      COACH
-                    </span>
-                    <div className="absolute inset-x-0 bottom-0 flex justify-center" aria-hidden="true">
-                      <User className="size-40 translate-y-6 text-white/25 transition-colors group-hover:text-primary/50 md:size-48" strokeWidth={1} />
-                    </div>
-                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black via-black/60 to-transparent" aria-hidden="true" />
+              <li key={coach} className="flex">
+                <article className="glass-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-2xl border-primary/40 bg-gradient-to-b from-primary/15 to-black transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
+                  <span
+                    className="absolute left-3 top-2 font-display text-4xl font-bold leading-none text-gradient-orange opacity-90 sm:text-5xl md:text-6xl"
+                    aria-hidden="true"
+                  >
+                    COACH
+                  </span>
+
+                  <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
+                    <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
                   </div>
-                  <div className="relative -mt-16 px-4 pb-5">
-                    <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary">Allenatore</p>
-                    <h4 className="mt-1 font-display text-lg font-semibold uppercase leading-tight md:text-xl">{coach}</h4>
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" aria-hidden="true" />
+                  <div className="relative mt-auto w-full p-3 md:p-4">
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary md:text-[11px]">
+                      Allenatore
+                    </p>
+                    <h4 className="mt-0.5 font-display text-xs font-semibold uppercase leading-tight sm:text-sm md:text-lg">
+                      {coach}
+                    </h4>
                   </div>
+
                 </article>
               </li>
             ))}
