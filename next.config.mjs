@@ -32,6 +32,8 @@ const nextConfig = {
   assetPrefix: isProd ? '/oriago-juniors/' : '',
   images: {
     unoptimized: true,
+    loader: 'custom',
+    loaderFile: './image-loader.js',
   },
 };
 
