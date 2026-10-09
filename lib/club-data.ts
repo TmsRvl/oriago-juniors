@@ -171,44 +171,53 @@ export const games = [
 
 export type Role = 'Portiere' | 'Difensore' | 'Centrocampista' | 'Attaccante'
 
-export const roster: Record<Role, string[]> = {
-  Portiere: ['Alessio Boscolo', 'Davide Toniato', 'Moritz Mele'],
+export interface PlayerData {
+  name: string
+  avatar?: string // facoltativo: se omesso o vuoto mostra l'icona User di default
+}
+
+export const roster: Record<Role, PlayerData[]> = {
+  Portiere: [
+    { name: 'Alessio Boscolo', avatar: '/images/players/alessio-boscolo.jfif' },
+    { name: 'Davide Toniato', avatar: '/images/players/davide-toniato.jfif' },
+    { name: 'Moritz Mele', avatar: '/images/players/moritz-mele.jfif' },
+  ],
   Difensore: [
-    'Giacomo Zornetta',
-    'Sebastiano Conton',
-    'Matteo Baldan',
-    'Luca Gianni',
-    'Thomas Bianco',
-    'Alberto Masi',
-    'Nicolò Damasio',
-    'Giacomo Fracasso',
-    'Giacomo Santuri',
+    { name: 'Giacomo Zornetta', avatar: '/images/players/giacomo-zornetta.jfif' },
+    { name: 'Sebastiano Conton', avatar: '/images/players/sebastiano-conton.jfif' },
+    { name: 'Matteo Baldan', avatar: '/images/players/matteo-baldan.jfif' },
+    { name: 'Luca Gianni', avatar: '/images/players/luca-gianni.jfif' },
+    { name: 'Thomas Bianco', avatar: '/images/players/thomas-bianco.jfif' },
+    { name: 'Alberto Masi', avatar: '/images/players/alberto-masi.jfif' },
+    { name: 'Nicolò Damasio', avatar: '/images/players/nicolo-damasio.jfif' },
+    { name: 'Giacomo Fracasso', avatar: '/images/players/giacomo-fracasso.jfif' },
+    { name: 'Giacomo Santuri', avatar: '/images/players/giacomo-santuri.jfif' },
   ],
   Centrocampista: [
-    'Matteo De Filippo',
-    'Riccardo Lanza',
-    'Lorenzo Botter',
-    'Cristian Marinò',
-    'Samuele Pilla',
-    'Alessandro Schiavonato',
-    'Niccolò Zennaro',
-    'Filippo Favaretto',
+    { name: 'Matteo De Filippo', avatar: '/images/players/matteo-de-filippo.jfif' },
+    { name: 'Riccardo Lanza', avatar: '/images/players/riccardo-lanza.jfif' },
+    { name: 'Lorenzo Botter', avatar: '/images/players/lorenzo-botter.jfif' },
+    { name: 'Cristian Marinò', avatar: '/images/players/cristian-marino.jfif' },
+    { name: 'Samuele Pilla', avatar: '/images/players/samuele-pilla.jfif' },
+    { name: 'Alessandro Schiavonato', avatar: '/images/players/alessandro-schiavonato.jfif' },
+    { name: 'Niccolò Zennaro', avatar: '/images/players/niccolo-zennaro.jfif' },
+    { name: 'Filippo Favaretto', avatar: '/images/players/filippo-favaretto.jfif' },
   ],
   Attaccante: [
-    'Thomas Curti',
-    'Elia Quartiero',
-    'Filippo Ruocco',
-    'Matteo Scarpa',
-    'Riccardo Tronconi',
-    'Pietro Santini',
-    'Marco Pellizzaro',
-    'Daniel Cerchiaro',
-    'Cosimo Di Martino',
+    { name: 'Thomas Curti', avatar: '/images/players/thomas-curti.jfif' },
+    { name: 'Elia Quartiero', avatar: '/images/players/elia-quartiero.jfif' },
+    { name: 'Filippo Ruocco', avatar: '/images/players/filippo-ruocco.jfif' },
+    { name: 'Matteo Scarpa', avatar: '/images/players/matteo-scarpa.jfif' },
+    { name: 'Riccardo Tronconi', avatar: '/images/players/riccardo-tronconi.jfif' },
+    { name: 'Pietro Santini', avatar: '/images/players/pietro-santini.jfif' },
+    { name: 'Marco Pellizzaro', avatar: '/images/players/marco-pellizzaro.jfif' },
+    { name: 'Daniel Cerchiaro', avatar: '/images/players/daniel-cerchiaro.jfif' },
+    { name: 'Cosimo Di Martino', avatar: '/images/players/cosimo-di-martino.jfif' },
   ],
 }
 
-export const players: { name: string; role: Role }[] = (Object.keys(roster) as Role[]).flatMap((role) =>
-  roster[role].map((name) => ({ name, role })),
+export const players = Object.entries(roster).flatMap(([role, list]) =>
+  list.map((p) => ({ ...p, role: role as Role }))
 )
 
 export const coaches = ['Simone Puccini', 'Luca  Ghezzo']

@@ -5,6 +5,8 @@ import { User } from 'lucide-react'
 import { coaches, players, roleFilters, type Role } from '@/lib/club-data'
 import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
+import { prefixPath } from '@/lib/utils-path'
 
 type Filter = (typeof roleFilters)[number]['value']
 
@@ -57,7 +59,6 @@ export function Squad() {
             <li key={player.name} className="flex">
               <article className="glass-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-2xl bg-gradient-to-b from-white/[0.06] to-black transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
                 
-                {/* SFONDO E GRAFICA (Occupa tutto lo spazio interno senza alterare le proporzioni) */}
                 <span
                   className="absolute left-3 top-2 font-display text-5xl font-bold leading-none text-gradient-orange opacity-90 sm:text-6xl md:text-7xl"
                   aria-hidden="true"
@@ -65,8 +66,24 @@ export function Squad() {
                   {roleShort[player.role]}
                 </span>
 
-                <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
+                {/* <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
                   <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
+                </div> */}
+
+                <div className="absolute inset-0 flex items-end justify-center overflow-hidden" aria-hidden="true">
+                  {player.avatar ? (
+                    <Image
+                      src={prefixPath(player.avatar)}
+                      alt={player.name}
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center pt-8">
+                      <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
+                    </div>
+                  )}
                 </div>
 
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" aria-hidden="true" />
