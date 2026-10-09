@@ -23,15 +23,13 @@
 
 // export default nextConfig
 
-
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'oriago-juniors'; \
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? `/${repoName}` : '',
-  assetPrefix: isProd ? `/${repoName}/` : '',
+  basePath: isProd ? '/oriago-juniors' : '',
+  assetPrefix: isProd ? '/oriago-juniors/' : '',
   images: {
     unoptimized: true,
   },
