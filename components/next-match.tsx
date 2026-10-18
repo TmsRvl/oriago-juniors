@@ -106,7 +106,9 @@
 //   )
 // }
 
+'use client'
 
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { CalendarDays, Clock, MapPin, Navigation, Trophy } from 'lucide-react'
 import { games } from '@/lib/club-data'
@@ -115,7 +117,18 @@ import { SectionHeading } from '@/components/section-heading'
 import { cn } from '@/lib/utils'
 import { prefixPath } from '@/lib/utils-path'
 
+const MATCH_EXPIRATION_BUFFER = 95 * 60 * 1000  //80 tempo effettivo + 15 intervallo
+
 export function NextMatch() {
+  const [now, setNow] = useState(() => Date.now())
+  useEffect(() => {
+    // Controlla ogni 30 min se è ora di passare alla gara successiva
+    const timer = setInterval(() => {
+      setNow(Date.now())
+    }, 1800000)
+    return () => clearInterval(timer)
+  }, [])
+  
   const todayStart = new Date()
   todayStart.setHours(0, 0, 0, 0)
 
@@ -123,9 +136,8 @@ export function NextMatch() {
     .slice()
     .sort((a, b) => new Date(a.kickoff).getTime() - new Date(b.kickoff).getTime())
     .find((fixture) => {
-      const matchDay = new Date(fixture.kickoff)
-      matchDay.setHours(0, 0, 0, 0)
-      return matchDay.getTime() >= todayStart.getTime()
+      const matchTime = new Date(fixture.kickoff).getTime()
+      return matchTime + MATCH_EXPIRATION_BUFFER >= now
     })
 
   if (!activeMatch) {
