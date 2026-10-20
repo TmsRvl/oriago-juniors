@@ -18,7 +18,7 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden">
       <Image
-        src={prefixPath("/images/maglie2.png")}
+        src={prefixPath("/images/maglie2.webp")}
         alt=""
         fill
         priority
