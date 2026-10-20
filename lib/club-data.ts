@@ -220,7 +220,9 @@ export const players = Object.entries(roster).flatMap(([role, list]) =>
   list.map((p) => ({ ...p, role: role as Role }))
 )
 
-export const coaches = ['Simone Puccini', 'Luca  Ghezzo']
+export const coaches = [
+  {name: 'Simone Puccini', avatar: ''}, 
+  {name: 'Luca  Ghezzo', avatar: 'luca-ghezzo.jfif'}]
 
 export const roleFilters = [
   { label: 'Tutti', value: 'all' },
