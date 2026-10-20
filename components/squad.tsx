@@ -109,7 +109,7 @@ export function Squad() {
           </h3>
           <ul className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {coaches.map((coach) => (
-              <li key={coach} className="flex">
+              <li key={coach.avatar} className="flex">
                 <article className="glass-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-2xl border-primary/40 bg-gradient-to-b from-primary/15 to-black transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
                   <span
                     className="absolute left-3 top-2 font-display text-4xl font-bold leading-none text-gradient-orange opacity-90 sm:text-5xl md:text-6xl"
@@ -127,7 +127,7 @@ export function Squad() {
                       Allenatore
                     </p>
                     <h4 className="mt-0.5 font-display text-xs font-semibold uppercase leading-tight sm:text-sm md:text-lg">
-                      {coach}
+                      {coach.name}
                     </h4>
                   </div>
 
