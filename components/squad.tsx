@@ -79,6 +79,7 @@ export function Squad() {
                       fill
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                   ) : (
                     <div className="flex h-full w-full items-center justify-center pt-8">
@@ -126,6 +127,7 @@ export function Squad() {
                       fill
                       sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                       className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                   ) : (
                     <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
