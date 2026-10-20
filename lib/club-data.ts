@@ -242,7 +242,7 @@ export const sponsors = {
 }
 
 export const contacts = {
-  email: 'tigrisabbioni@gmail.com',
+  email: 'oriagojuniors@gmail.com',
   phone: '+39 392 588 7206',
   phoneHref: 'tel:+393925887206',
   training: 'Campo Parrocchiale di Lughetto, Piazza Conciliazione 1 - 30010 Campagna Lupia (VE)',

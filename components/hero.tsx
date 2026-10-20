@@ -39,7 +39,8 @@ export function Hero() {
           </span> */}
 
           <h1 className="mt-6 font-display text-5xl font-bold uppercase leading-[0.95] tracking-tight text-balance sm:text-6xl lg:text-8xl">
-            Il Futuro del Calcio a Oriago <span className="text-gradient-orange">Comincia Ora</span>
+            {/* Il Futuro del Calcio a Oriago <span className="text-gradient-orange">Comincia Ora</span> */}
+            Una squadra nata da una birra con gli amici <span className="text-gradient-orange">con gli amici</span>
           </h1>
 
           {/* <p className="mt-6 max-w-xl text-base leading-relaxed text-white/70 md:text-lg">
