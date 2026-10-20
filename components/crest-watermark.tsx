@@ -30,7 +30,7 @@ export function CrestWatermark() {
 
       {/* Rimosso mix-blend-screen e aggiunta accelerazione hardware */}
       <img
-        src={prefixPath('/images/logo-oriago.webp')}
+        src={prefixPath('/images/logo-oriago2.png')}
         alt=""
         width={400}
         height={400}
