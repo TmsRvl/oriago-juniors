@@ -16,7 +16,7 @@ export default function Page() {
         <Hero />
         <NextMatch />
         <Championship />
-        {/* <Squad /> */}
+        <Squad />
         <Sponsors />
       </main>
       <SiteFooter />
