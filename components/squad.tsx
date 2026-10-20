@@ -109,7 +109,7 @@ export function Squad() {
           </h3>
           <ul className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
             {coaches.map((coach) => (
-              <li key={coach.avatar} className="flex">
+              <li key={coach.name} className="flex">
                 <article className="glass-card group relative flex aspect-[3/4] w-full flex-col justify-between overflow-hidden rounded-2xl border-primary/40 bg-gradient-to-b from-primary/15 to-black transition-transform duration-300 hover:-translate-y-1 hover:border-primary/70">
                   <span
                     className="absolute left-3 top-2 font-display text-4xl font-bold leading-none text-gradient-orange opacity-90 sm:text-5xl md:text-6xl"
@@ -118,9 +118,22 @@ export function Squad() {
                     COACH
                   </span>
 
-                  <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
-                    <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
+                  <div className="absolute inset-0 flex items-end justify-center overflow-hidden" aria-hidden="true">
+                  {coach.avatar ? (
+                    <Image
+                      src={prefixPath(coach.avatar)}
+                      alt={coach.name}
+                      fill
+                      sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                      className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex items-center justify-center pt-8" aria-hidden="true">
+                      <User className="size-36 text-white/25 transition-colors group-hover:text-primary/50 sm:size-40 md:size-48" strokeWidth={1} />
+                    </div>
+                  )}
                   </div>
+
                   <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black via-black/80 to-transparent" aria-hidden="true" />
                   <div className="relative mt-auto w-full p-3 md:p-4">
                     <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary md:text-[11px]">
