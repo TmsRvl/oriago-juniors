@@ -104,7 +104,7 @@ export function SiteHeader() {
         <a href="#home" className="flex items-center gap-3" aria-label="Oriago Juniors – torna all'inizio">
           {/* Rimosso mix-blend-screen e aggiunto decoding="async" */}
           <img
-            src={prefixPath("/images/logo-oriago.png")}
+            src={prefixPath("/images/logo-oriago2.png")}
             alt="Oriago Juniors Crest"
             width={80}
             height={80}
