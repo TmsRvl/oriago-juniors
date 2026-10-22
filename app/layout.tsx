@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
   // Titolo della pagina ottimizzato per Google (max ~60 caratteri)
   title: {
-    default: 'Oriago Juniors | Calcio Amatoriale CSI Venezia',
+    default: 'Oriago Juniors',
     template: '%s | Oriago Juniors',
   },
 
