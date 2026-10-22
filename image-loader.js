@@ -3,7 +3,7 @@ export default function customImageLoader({ src }) {
     return src;
   }
   
-  const basePath = '/oriago-juniors';
+  const basePath = '';
 
   // Evita di duplicare il basePath se per caso è già presente
   if (src.startsWith(basePath)) {
