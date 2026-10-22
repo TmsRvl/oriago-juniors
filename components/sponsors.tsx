@@ -133,20 +133,50 @@ export function Sponsors() {
             </div>
           </a> */}
 
-          <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
-            {sponsors.top.map((s) => (
-              <li key={s.name} className="glass-card flex flex-col justify-between rounded-2xl border-white/10 p-5">
-                <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/60 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
-                  <Star className="size-3" aria-hidden="true" />
-                  Top Supporter
-                </span>
-                <div className="mt-4">
-                  <SponsorMark name={s.name} logo={s.logo}/>
-                  <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{s.tagline}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          
+        <ul className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
+          {sponsors.top.map((s) => (
+            <li key={s.name} className="glass-card flex flex-col justify-between rounded-2xl border-white/10 p-5">
+              <span className="inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/60 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+                <Star className="size-3" aria-hidden="true" />
+                Top Supporter
+              </span>
+              <div className="mt-4">
+                <SponsorMark name={s.name} logo={s.logo} />
+                <p className="mt-2 text-xs uppercase tracking-widest text-muted-foreground">{s.tagline}</p>
+              </div>
+            </li>
+          ))}
+
+          {/* diventa sponsor */}
+          <li className="glass-card flex flex-col justify-between rounded-2xl border-white/10 p-5">
+            <a
+              href={`mailto:${contacts.email}?subject=Sponsorizzazione%20Oriago%20Juniors`}
+              className="group flex flex-col justify-between rounded-2xl border-2 border-dashed border-primary/50 p-6 transition-colors hover:border-primary hover:bg-primary/10 lg:row-span-2"
+            >
+              <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-90">
+                <svg
+                  className="size-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+              <div className="mt-10">
+                <h3 className="font-display text-3xl font-bold uppercase leading-none">
+                  Diventa Nostro <span className="text-primary">Sponsor</span>
+                </h3>
+              </div>
+            </a>
+            {/* <p className="mt-2 text-xs text-white/50">
+              Oppure scrivi a: <span className="text-white underline">{contacts.email}</span>
+            </p> */}
+          </li>
+        </ul>
       </div>
     </section>
   )
