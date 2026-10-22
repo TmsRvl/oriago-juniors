@@ -20,9 +20,6 @@ export default function customImageLoader({ src }) {
     return src;
   }
 
-  // Rimuove l'eventuale vecchio prefisso '/oriago-juniors' se rimasto nei dati o nel codice
-  const cleanSrc = src.replace(/^\/oriago-juniors/, '');
-
   // Restituisce il percorso diretto alla radice del sito (es. /images/logo-oriago.png)
-  return cleanSrc.startsWith('/') ? cleanSrc : `/${cleanSrc}`;
+  return src;
 }
