@@ -70,6 +70,10 @@ export const metadata: Metadata = {
   // Dominio base del sito (sostituisci se usi www o dominio provvisorio)
   metadataBase: new URL('https://oriagojuniors.it'),
 
+  verification: {
+    google: 'BpQ8CBNrPBkZyOKtGt3HDzRDovC5Y7ic4ajieNT09Qw', 
+  },
+
   // Titolo della pagina ottimizzato per Google (max ~60 caratteri)
   title: {
     default: 'Oriago Juniors',
