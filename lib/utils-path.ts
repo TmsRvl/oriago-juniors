@@ -1,4 +1,4 @@
-const basePath = process.env.NODE_ENV === 'production' ? '/oriago-juniors' : ''
+const basePath = process.env.NODE_ENV === 'production' ? '' : ''
 
 export function prefixPath(path: string) {
   if (path.startsWith('http')) return path
