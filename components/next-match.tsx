@@ -155,7 +155,7 @@ export function NextMatch() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           id="prossima-gara-title"
-          eyebrow="Matchday"
+          eyebrow="Match"
           title={
             <>
               Prossima <span className="text-primary">Partita</span>
