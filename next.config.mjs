@@ -28,8 +28,8 @@ const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',
-  basePath: isProd ? '/oriago-juniors' : '',
-  assetPrefix: isProd ? '/oriago-juniors/' : '',
+  // basePath: isProd ? '/oriago-juniors' : '',
+  // assetPrefix: isProd ? '/oriago-juniors/' : '',
   images: {
     unoptimized: true,
   },
