@@ -15,20 +15,19 @@
 // }
 
 export default function customImageLoader({ src }) {
-  // Se l'immagine ha già un link web completo (http o https), non toccarla
+  // Se è già un URL assoluto, non modificarlo
   if (src.startsWith('http://') || src.startsWith('https://')) {
     return src;
   }
 
-  // Dominio ufficiale della squadra
-  const domain = 'https://www.oriagojuniors.it';
+  // Elimina qualsiasi occorrenza di /oriago-juniors rimasta nella stringa
+  let cleanSrc = src.replace(/^\/?oriago-juniors\/?/, '');
 
-  // Rimuove il vecchio prefisso '/oriago-juniors' se fosse ancora memorizzato da qualche parte
-  let cleanSrc = src.replace(/^\/oriago-juniors/, '');
+  // Rimuove lo slash iniziale per gestire la concatenazione corretta
+  if (cleanSrc.startsWith('/')) {
+    cleanSrc = cleanSrc.slice(1);
+  }
 
-  // Rimuove l'eventuale slash iniziale per evitare doppi slash (es. evita .it//image)
-  cleanSrc = cleanSrc.startsWith('/') ? cleanSrc.slice(1) : cleanSrc;
-
-  // Restituisce l'URL completo: https://www.oriagojuniors.it/image/maglia3.png
-  return `${domain}/${cleanSrc}`;
+  // Restituisce l'URL pulito: https://oriagojuniors.it/images/maglie3.jpg
+  return `https://oriagojuniors.it/${cleanSrc}`;
 }
