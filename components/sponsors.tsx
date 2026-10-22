@@ -149,10 +149,10 @@ export function Sponsors() {
           ))}
 
           {/* diventa sponsor */}
-          <li className="glass-card flex flex-col justify-between rounded-2xl border-white/10 p-5">
+          <li className="glass-card flex flex-col justify-between rounded-2xl !border-2 !border-dashed !border-primary/60 p-5 transition-colors hover:!border-primary">
             <a
               href={`mailto:${contacts.email}?subject=Sponsorizzazione%20Oriago%20Juniors`}
-              className="group flex flex-col justify-between rounded-2xl border-2 border-dashed border-primary/50 p-6 transition-colors hover:border-primary hover:bg-primary/10 lg:row-span-2"
+              className="group flex h-full flex-col justify-between"
             >
               <div className="flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:rotate-90">
                 <svg
